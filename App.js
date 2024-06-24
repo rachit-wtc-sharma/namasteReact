@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 //create nested element on react
 
 // const nestedStructure  = React.createElement('div',{
