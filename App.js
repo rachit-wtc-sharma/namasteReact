@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Header from './src/components/Header';
+import Main from './src/components/Main';
+import Footer from './src/components/Footer';
 
 //create nested element on react
 
@@ -21,22 +24,57 @@ import ReactDOM from 'react-dom/client';
 
 //Create nested element with two child div as a siblings
 
-const nestedStructure  = React.createElement('div',{
-    id:'parent'
-},[React.createElement('div',{
-    id:'child'
-},[React.createElement('h1',{},"i am a h1 tag created through nested structure"),
-   React.createElement('h2',{},"i am a h2 tag created through nested structure"),
-   React.createElement('h3',{},"i am a h3 tag created through nested structure")]),React.createElement('div',{
-    id:'child2'
-},[React.createElement('h1',{},"i am a h1 tag created through nested structure"),
-   React.createElement('h2',{},"i am a h2 tag created through nested structure"),
-   React.createElement('h3',{},"i am a h3 tag created through nested structure")])])
+// const nestedStructure  = React.createElement('div',{
+//     id:'parent'
+// },[React.createElement('div',{
+//     id:'child'
+// },[React.createElement('h1',{},"i am a h1 tag created through nested structure"),
+//    React.createElement('h2',{},"i am a h2 tag created through nested structure"),
+//    React.createElement('h3',{},"i am a h3 tag created through nested structure")]),React.createElement('div',{
+//     id:'child2'
+// },[React.createElement('h1',{},"i am a h1 tag created through nested structure"),
+//    React.createElement('h2',{},"i am a h2 tag created through nested structure"),
+//    React.createElement('h3',{},"i am a h3 tag created through nested structure")])])
 
-const heading = React.createElement('h1',{
-    id:'heading'
-},"Hello from react");
+// const heading = React.createElement('h1',{
+//     id:'heading'
+// },"Hello from react");
+// const root = ReactDOM.createRoot(document.getElementById('react-root'));
+// const root2 = ReactDOM.createRoot(document.getElementById('react-root2'));
+// root.render(nestedStructure);
+// root2.render(heading);
+
+// function Title () {
+//     return <h1>I am a title component</h1>
+// }
+// const title = (
+//     <span>Hi this is variable</span>
+// )
+// function HeaderComponent() {
+//     return (
+//         <div className='container'>
+//             {title}
+//             <Title /> //Component composition
+//             <h1 id="heading">I am a react header component</h1>
+//         </div>
+//     )
+// }
+
+function App() {
+    return (
+        <div className='page-wrapper'>
+           <header>
+                <Header />
+           </header>
+           <main>
+                <Main />
+           </main>
+           <footer>
+                <Footer />
+           </footer>
+        </div>
+    )
+}
+
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
-const root2 = ReactDOM.createRoot(document.getElementById('react-root2'));
-root.render(nestedStructure);
-root2.render(heading);
+root.render(<App />)
