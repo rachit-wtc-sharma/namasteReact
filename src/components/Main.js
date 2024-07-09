@@ -1,21 +1,13 @@
-import Products from './Products';
 import Filter from './Filter';
-import { getAllProducts } from './HTTPRequest';
-import { useEffect, useState } from 'react';
-import Categories from './Categories';
+import { useState } from 'react';
+import Home from './Home';
+import useFetchAllProducts from '../utils/useFetchAllProducts';
+
 function Main() {
-    const [productData, setProductData] = useState([]);
-    const [initialState, setInitialState] = useState('1')
-    useEffect(function(){
-        getProductData();
-    },[]);
-    const getProductData = function(){
-        getAllProducts().then(function(resp){
-            if(resp.status === 200){
-                setProductData(resp.data);
-            }
-        });
-    }
+    const productData = useFetchAllProducts();
+    const [initialState, setInitialState] = useState('1');
+  
+
     function sortBy(event) {
         let selectedValue = event.target.value;
         if(selectedValue == 1) {
@@ -43,13 +35,11 @@ function Main() {
 
     }
     return (
-        <div className="main-content">
-            <div className="main">
-                    <Categories />
+       <>
                     <Filter initialState={initialState} sortBy={sortBy}/>
-                    <Products productData={productData}/>
-            </div>
-        </div>
+                    <Home productData = {productData} />
+       </>
+                   
     )
 }
 

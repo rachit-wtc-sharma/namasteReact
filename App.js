@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Header from './src/components/Header';
-import Main from './src/components/Main';
-import Footer from './src/components/Footer';
+import {RouterProvider } from 'react-router-dom';
+import { appRouter } from './Route';
+import MainLayout from './MainLayout';
 
 //create nested element on react
 
@@ -62,19 +62,24 @@ import Footer from './src/components/Footer';
 
 function App() {
     return (
-        <div className='page-wrapper'>
-           <header>
-                <Header />
-           </header>
-           <main>
-                <Main />
-           </main>
-           <footer>
-                <Footer />
-           </footer>
-        </div>
+        <MainLayout />
     )
 }
 
+// const appRouter = createBrowserRouter([
+//      {
+//           path:'/',
+//           element: <App />,
+//           children: [{
+//                path: '/about',
+//                element: <About />
+//           },{
+//                path: '/',
+//                element: <Main />
+//           }]
+//      },
+     
+// ])
+
 const root = ReactDOM.createRoot(document.getElementById('react-root'));
-root.render(<App />)
+root.render(<RouterProvider router={appRouter} />);

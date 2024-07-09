@@ -1,6 +1,15 @@
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 14px;
+    a {
+        text-transform: capitalize;
+        color: #252525;
+        text-decoration: none;
+    }
+    a.active {
+        font-weight: 600;
+
+    }
 }
 .logo-wrapper {
     .logo {
@@ -20,6 +29,22 @@ header {
             display: flex;
             list-style-type: none;
             gap: 30px;
+        }
+        .categories {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            li {
+                padding-bottom: 5px;
+               
+                text-transform: uppercase;
+                cursor: pointer;
+                &:hover {
+                    font-weight: 600;
+                    border-bottom: 2px solid #252525;
+                }
+            }
         }
     }
 
@@ -128,6 +153,11 @@ footer {
                             }
                         }
                     }
+                    &.--shimmer {
+                        background-color: #e6e6e6;
+                        height: 400px;
+                        width: 300px;
+                    }
                 }
                 
                 
@@ -138,6 +168,7 @@ footer {
             margin-right: auto;
             margin-left: auto;
             text-align: right;
+            margin-bottom: 24px;
             .sorter {
                 display: flex;
                 justify-content: end;
@@ -146,21 +177,6 @@ footer {
                     border: none;
                     border-bottom: 1px solid #4a5568;
                     padding-bottom: 5px;
-                }
-            }
-        }
-        .categories {
-            list-style-type: none;
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            li {
-                padding-bottom: 5px;
-                border-bottom: 2px solid #252525;
-                text-transform: uppercase;
-                cursor: pointer;
-                &:hover {
-                    font-weight: 600;
                 }
             }
         }

@@ -1,5 +1,9 @@
+import Shimmer from './Shimmer';
 function ProductCard(props) {
     const productData = props.productData;
+    if(productData.length === 0) {
+        return <Shimmer/>
+    }
     const productCards = productData.map(function(product){
         return <div className="product-card" key={product.id}>
                     <div className="image-wrapper">

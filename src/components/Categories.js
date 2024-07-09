@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
-import {getAllCategories} from './HTTPRequest';
+import { NavLink } from 'react-router-dom';
+import useFetchCategories from '../utils/useFetchCategories';
 function Categories() {
-    const [initialCategories, setInitialCategories]  = useState([]);
-    useEffect(function(){
-        getAllCategories().then(function(resp){
-            if(resp.status == 200) {
-                console.log(resp);
-                setInitialCategories(resp.data);
-            } 
-        })
-    },[]);
+    const initialCategories = useFetchCategories();
     return (
         <ul className="categories">
             {initialCategories.map(function(cat,index){
-                return <li key={index} >{cat}</li>
+                return (
+                    <li key={index}>
+                        <NavLink to={'/'+ cat} key={index} className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                  }>{cat}</NavLink>
+                  </li>
+                )
+                
             })}
         </ul>
     )
