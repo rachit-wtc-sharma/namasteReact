@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllCategories } from "../components/HTTPRequest";
+import { getAllCategories } from "./HTTPRequest";
 
 function useFetchCategories() {
     const [initialCategories, setInitialCategories]  = useState([]);

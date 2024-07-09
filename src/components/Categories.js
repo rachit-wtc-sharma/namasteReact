@@ -7,7 +7,7 @@ function Categories() {
             {initialCategories.map(function(cat,index){
                 return (
                     <li key={index}>
-                        <NavLink to={'/'+ cat} key={index} className={({ isActive, isPending }) =>
+                        <NavLink to={'/category/'+ cat} key={index} className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "active" : ""
                   }>{cat}</NavLink>
                   </li>

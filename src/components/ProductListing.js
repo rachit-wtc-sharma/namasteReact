@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getCategoryByName } from './HTTPRequest';
+import { getCategoryByName } from '../utils/HTTPRequest';
 import Products from './Products';
 function ProductListing() {
     const [categoryData, setCategoryData] = useState([]);

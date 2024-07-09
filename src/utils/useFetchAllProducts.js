@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../components/HTTPRequest";
+import { getAllProducts } from "./HTTPRequest";
 
 function useFetchAllProducts(){
     const [productData, setProductData] = useState([]);
